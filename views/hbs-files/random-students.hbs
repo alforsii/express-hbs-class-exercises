@@ -1,0 +1,26 @@
+<section>
+    <h2> {{ randomStudent.firstName}} {{randomStudent.lastName}} </h2>
+    <p>BootCamp:</p>
+    <ul>
+        {{!-- for each loop --}}
+        {{#each randomStudent.bootCamp}}
+        <li> Course {{@key}} {{this.type}} </li>
+        {{#if this.graduated}}
+        <li> {{this.year}} </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+    {{!-- if ..else --}}
+    {{#if randomStudent.isCarrierChanger}}
+    <li> This is </li>
+    {{else}}
+    <li> this is not </li>
+    {{/if}}
+
+    {{!-- unless if statement, executes only if false --}}
+    {{#unless randomStudent.isCarrierChanger}}
+
+    <li> Definitely is not a Carrier Changer </li>
+    {{/unless}}
+
+</section>
